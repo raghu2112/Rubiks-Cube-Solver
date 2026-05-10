@@ -128,3 +128,19 @@ class CubeSolver:
             for color in cube_dict[face]:
                 result += color_mapping.get(color, '?')
         return result
+
+    def solve_dispatch(self, cube_dict, color_mapping=None):
+        """
+        Auto-dispatch to the correct solver based on cube size.
+        For 2x2: uses the built-in IDA* pocket cube solver.
+        For 3x3: uses the Kociemba Two-Phase Algorithm.
+        """
+        if self.size == 2:
+            from solver.pocket_cube import solve_2x2
+            return solve_2x2(cube_dict)
+        elif self.size == 3:
+            cs = self.build_cube_string(cube_dict, color_mapping)
+            return self.solve(cs)
+        else:
+            return False, f"Solver for {self.size}x{self.size} is not yet implemented."
+
