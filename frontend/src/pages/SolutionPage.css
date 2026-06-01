@@ -1,0 +1,287 @@
+/* src/pages/SolutionPage.css */
+
+.solution-page {
+  padding-top: 84px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.solution-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md) var(--space-3xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+/* Header */
+.solution-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  border-bottom: 1px solid var(--border-primary);
+  padding-bottom: var(--space-md);
+}
+
+.back-btn-sol {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.solution-title-wrap {
+  flex: 1;
+}
+
+.solution-title {
+  font-family: var(--font-headline);
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.solution-subtitle {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+/* Already Solved Card */
+.already-solved-card {
+  padding: var(--space-3xl) var(--space-xl);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: var(--space-2xl);
+}
+
+.solved-emoji {
+  font-size: 4rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.already-solved-card h2 {
+  font-family: var(--font-headline);
+  font-size: 1.8rem;
+  color: var(--cube-green);
+}
+
+.already-solved-card p {
+  color: var(--text-secondary);
+  max-width: 480px;
+}
+
+.solved-actions {
+  margin-top: var(--space-md);
+}
+
+/* No Solution Card */
+.no-solution {
+  text-align: center;
+  padding: var(--space-3xl);
+  margin-top: 80px;
+}
+
+.no-solution-icon {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: var(--space-lg);
+}
+
+.no-solution h2 {
+  font-family: var(--font-headline);
+  font-size: 1.5rem;
+  margin-bottom: var(--space-sm);
+  color: var(--text-primary);
+}
+
+.no-solution p {
+  color: var(--text-muted);
+  margin-bottom: var(--space-xl);
+}
+
+/* Grid Layout */
+.solution-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+/* Left Panel: Instructions & Moves */
+.solution-left-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* Instruction Display Card */
+.instruction-card {
+  padding: var(--space-xl);
+  border: var(--glass-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.instruction-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-md);
+  font-family: var(--font-headline);
+}
+
+.step-badge {
+  background: var(--bg-input);
+  color: var(--text-primary);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.solve-speed-label {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.instruction-move-display {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.instruction-move-notation {
+  font-family: var(--font-headline);
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--cube-red);
+  text-shadow: 0 0 15px rgba(220, 38, 38, 0.2);
+}
+
+.instruction-move-desc {
+  font-family: var(--font-headline);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.instruction-details {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Walkthrough Controls */
+.walk-controls {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.walk-controls .btn {
+  flex: 1;
+}
+
+/* Move Sequence Container */
+.move-sequence-card {
+  padding: var(--space-xl);
+  border: var(--glass-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.move-sequence-card h3 {
+  font-family: var(--font-headline);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-md);
+  border-bottom: 1px solid var(--border-primary);
+  padding-bottom: var(--space-xs);
+}
+
+.scrollable-moves-container {
+  max-height: 250px;
+  overflow-y: auto;
+  padding-right: var(--space-xs);
+}
+
+.moves-flow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+/* Right Panel: Custom Twisty Player */
+.solution-right-panel {
+  padding: var(--space-xl);
+  border: var(--glass-border);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  border-color: var(--border-accent);
+}
+
+.right-panel-header h2 {
+  font-family: var(--font-headline);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.right-panel-header p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.twisty-player-panel-wrap {
+  background: var(--bg-primary);
+  padding: var(--space-sm);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-panel-footer {
+  margin-top: var(--space-sm);
+  display: flex;
+  justify-content: center;
+}
+
+.solve-another-btn {
+  width: 100%;
+  padding: 14px 28px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+}
+
+/* Responsive Styles */
+@media (max-width: 968px) {
+  .solution-layout-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .solution-title {
+    font-size: 2rem;
+  }
+  .solution-header {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+}

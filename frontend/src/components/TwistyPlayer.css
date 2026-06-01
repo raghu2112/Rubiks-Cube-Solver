@@ -1,0 +1,31 @@
+/* src/components/TwistyPlayer.css */
+.twisty-player-wrapper {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
+.twisty-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.twisty-spinner {
+  font-size: 2.5rem;
+  animation: spin 2s linear infinite;
+}
+
+/* Style the twisty-player web component itself */
+.twisty-player-wrapper twisty-player {
+  width: 100% !important;
+}

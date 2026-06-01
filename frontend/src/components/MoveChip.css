@@ -1,0 +1,53 @@
+/* src/components/MoveChip.css */
+.move-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 0.9rem;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border-primary);
+  box-shadow: var(--shadow-sm);
+  animation: chipIn 0.3s ease-out both;
+  transition: all var(--transition-fast);
+}
+
+.move-chip:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.move-chip.active {
+  border-color: var(--cube-red);
+  box-shadow: var(--shadow-glow-red);
+  background: rgba(220, 38, 38, 0.08);
+}
+
+.chip-num {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--cube-red);
+  background: rgba(220, 38, 38, 0.1);
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-family: var(--font-headline);
+}
+
+.chip-move {
+  font-family: var(--font-headline);
+  font-weight: 700;
+}
+
+.chip-desc {
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+@keyframes chipIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

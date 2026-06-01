@@ -1,0 +1,35 @@
+/* src/components/ThemeToggle.css */
+.theme-toggle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: var(--radius-full);
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: all var(--transition-fast);
+}
+
+.theme-toggle:hover {
+  background: var(--bg-hover);
+  transform: scale(1.1);
+  border-color: var(--border-hover);
+}
+
+.toggle-icon {
+  position: absolute;
+  font-size: 1.2rem;
+  opacity: 0;
+  transform: scale(0) rotate(180deg);
+  transition: all var(--transition-normal);
+}
+
+.toggle-icon.show {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}

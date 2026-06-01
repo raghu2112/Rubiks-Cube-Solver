@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+.env/
+
+# Local data / history
+solve_history.json
+
+# IDEs
+.vscode/
+.idea/
+.gemini/

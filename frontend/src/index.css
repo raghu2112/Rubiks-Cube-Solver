@@ -1,0 +1,234 @@
+/* ═══════════════════════════════════════════════════════
+   RUBIK'S CUBE SOLVER — Design System Tokens & Reset
+   Based on Stitch MCP Design System
+   ═══════════════════════════════════════════════════════ */
+
+/* ── CSS Reset ──────────────────────────────────────── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* ── Theme Variables ────────────────────────────────── */
+:root {
+  /* Rubik's Cube Colors */
+  --cube-red: #DC2626;
+  --cube-orange: #F97316;
+  --cube-yellow: #FBBF24;
+  --cube-green: #16A34A;
+  --cube-blue: #2563EB;
+  --cube-white: #FFFFFF;
+
+  /* Gradients */
+  --gradient-rainbow: linear-gradient(135deg, #DC2626, #F97316, #FBBF24, #16A34A, #2563EB);
+  --gradient-cta: linear-gradient(135deg, #DC2626, #F97316);
+  --gradient-cta-hover: linear-gradient(135deg, #B91C1C, #EA580C);
+  --gradient-success: linear-gradient(135deg, #16A34A, #22C55E);
+  --gradient-accent: linear-gradient(135deg, #2563EB, #16A34A);
+
+  /* Typography */
+  --font-headline: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.16);
+  --shadow-glow-red: 0 0 20px rgba(220, 38, 38, 0.3);
+  --shadow-glow-blue: 0 0 20px rgba(37, 99, 235, 0.3);
+  --shadow-glow-green: 0 0 20px rgba(22, 163, 74, 0.3);
+}
+
+/* ── Dark Theme (Default) ───────────────────────────── */
+[data-theme="dark"] {
+  --bg-primary: #0A0E1A;
+  --bg-secondary: #111827;
+  --bg-card: rgba(30, 41, 59, 0.6);
+  --bg-card-solid: #1E293B;
+  --bg-glass: rgba(30, 41, 59, 0.4);
+  --bg-input: #1E293B;
+  --bg-hover: #334155;
+
+  --text-primary: #F1F5F9;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
+  --text-inverse: #0F172A;
+
+  --border-primary: rgba(51, 65, 85, 0.6);
+  --border-hover: rgba(71, 85, 105, 0.8);
+  --border-accent: rgba(220, 38, 38, 0.4);
+
+  --glass-blur: blur(20px);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.08);
+
+  color-scheme: dark;
+  --scrollbar-track: #1E293B;
+  --scrollbar-thumb: #475569;
+}
+
+/* ── Light Theme ────────────────────────────────────── */
+[data-theme="light"] {
+  --bg-primary: #F8FAFC;
+  --bg-secondary: #FFFFFF;
+  --bg-card: rgba(255, 255, 255, 0.8);
+  --bg-card-solid: #FFFFFF;
+  --bg-glass: rgba(255, 255, 255, 0.6);
+  --bg-input: #F1F5F9;
+  --bg-hover: #E2E8F0;
+
+  --text-primary: #0F172A;
+  --text-secondary: #334155;
+  --text-muted: #64748B;
+  --text-inverse: #F8FAFC;
+
+  --border-primary: rgba(226, 232, 240, 0.8);
+  --border-hover: rgba(203, 213, 225, 1);
+  --border-accent: rgba(220, 38, 38, 0.3);
+
+  --glass-blur: blur(20px);
+  --glass-border: 1px solid rgba(0, 0, 0, 0.06);
+
+  color-scheme: light;
+  --scrollbar-track: #F1F5F9;
+  --scrollbar-thumb: #CBD5E1;
+}
+
+/* ── Body Theming ───────────────────────────────────── */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* ── Scrollbar ──────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* ── Selection ──────────────────────────────────────── */
+::selection {
+  background: rgba(220, 38, 38, 0.3);
+  color: var(--text-primary);
+}
+
+/* ── Links ──────────────────────────────────────────── */
+a {
+  color: var(--cube-blue);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+a:hover {
+  color: var(--cube-red);
+}
+
+/* ── Utility Classes ────────────────────────────────── */
+.glass-card {
+  background: var(--bg-glass);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: var(--glass-border);
+  border-radius: var(--radius-lg);
+}
+
+.gradient-text {
+  background: var(--gradient-rainbow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% auto;
+  animation: gradientShift 5s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+  100% { background-position: 0% center; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ── Page Transition ────────────────────────────────── */
+.page-enter {
+  animation: fadeInUp 0.5s ease both;
+}

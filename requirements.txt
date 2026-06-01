@@ -3,3 +3,6 @@ numpy
 streamlit
 Pillow
 future
+fastapi
+uvicorn[standard]
+python-multipart

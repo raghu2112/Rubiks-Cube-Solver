@@ -1,0 +1,93 @@
+/* src/components/FaceEditor.css */
+.face-editor {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.face-tabs {
+  display: flex;
+  gap: 4px;
+  background: var(--bg-input);
+  padding: 4px;
+  border-radius: var(--radius-md);
+}
+
+.face-tab {
+  flex: 1;
+  padding: 8px 4px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-headline);
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.face-tab:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.face-tab.active {
+  background: var(--gradient-cta);
+  color: #fff;
+  box-shadow: var(--shadow-glow-red);
+}
+
+.face-tab-label {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.editor-grid {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.editor-cell {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 6px;
+  background: var(--bg-card);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-primary);
+}
+
+.color-preview {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  flex-shrink: 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.color-select {
+  flex: 1;
+  padding: 6px 8px;
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-sm);
+  background: var(--bg-input);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  cursor: pointer;
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.color-select:focus {
+  border-color: var(--cube-blue);
+}
+
+.editor-save-btn {
+  width: 100%;
+  margin-top: var(--space-sm);
+}
